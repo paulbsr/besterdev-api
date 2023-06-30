@@ -11,31 +11,34 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api/v1")
 
 public class ControllerOne {
-        @Autowired
+    @Autowired
     private RepoOne repoOne;
 
+    //RETURN HELLO WORLD:
+    //PROD: https://besterdev-be-f61a2efc23c9.herokuapp.com/api/v1/hello
     @GetMapping("/hello")
-    private String helloWorld()
-    {
-        return "Hello World";
-    }
+    private String helloWorld() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd @ HH:mm");
+        LocalDateTime now = LocalDateTime.now();
+//        System.out.println(dtf.format(now));
+        return "Hello World......" +now;}
 
-    //RETURN ALL TASKS
-    //PROD: https://besterdev-api-gm-com.cpi.gm.com/api/v1/taskrecords
-    //DEV: https://besterdev-api.apps.pcfepg3mi.gm.com/api/v1/taskrecords
+    //RETURN ALL RECORDS:
+    //PROD: https://besterdev-be-f61a2efc23c9.herokuapp.com/api/v1/records
     //LOCAL: http://localhost:8000/api/v1/records
     @GetMapping("/records")
     private List<EntityOne> getAllRecords() {return repoOne.findAll();}
 
-    //CREATE A NEW TASK
-    //PROD: https://besterdev-api-gm-com.cpi.gm.com/api/v1/taskrecords/create
-    //DEV: https://besterdev-api.apps.pcfepg3mi.gm.com/api/v1/taskrecords/create
-    //LOCAL: http://localhost:8000/api/v1/taskrecords/create
+    //CREATE NEW RECORD:
+    //PROD: https://besterdev-be-f61a2efc23c9.herokuapp.com/api/v1/records/create
+    //LOCAL: http://localhost:8000/api/v1/records/create
     //INSOMNIA POST STRING = { "colOne": "colOne", "colTwo": "colTwo", "colThree": "colThree"}
     @RequestMapping(value = "/records/create", method = RequestMethod.POST)
     EntityOne postRecord(@RequestBody EntityOne tableoneentity) {
