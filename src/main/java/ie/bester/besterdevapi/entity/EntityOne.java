@@ -2,28 +2,36 @@ package ie.bester.besterdevapi.entity;
 
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
+import java.time.LocalDate;
 
 
 @Transactional
 @Entity
-@Table (name = "TableOne", schema="besterdev")
+@Table (name = "dbtable", schema="besterdev")
 
 public class EntityOne {
 
     @Id
     @GeneratedValue
     private int id;
-    private String colOne;
-    private String colTwo;
-    private String colThree;
+    private String colone;
+    private String coltwo;
+    private String colthree;
+    private String colfour;
+    private LocalDate coldate;
 
     public EntityOne () {}
 
-    public EntityOne (int id, String colOne, String colTwo, String colThree) {
+    
+    
+    
+    public EntityOne(int id, String colone, String coltwo, String colthree, String colfour, LocalDate coldate) {
         this.id = id;
-        this.colOne = colOne;
-        this.colTwo = colTwo;
-        this.colThree = colThree;
+        this.colone = colone;
+        this.coltwo = coltwo;
+        this.colthree = colthree;
+        this.colfour = colfour;
+        this.coldate = coldate;
     }
 
     public int getId() {
@@ -34,27 +42,43 @@ public class EntityOne {
         this.id = id;
     }
 
-    public String getColOne() {
-        return colOne;
+    public String getcolone() {
+        return colone;
     }
 
-    public void setColOne(String colOne) {
-        this.colOne = colOne;
+    public void setcolone(String colone) {
+        this.colone = colone;
     }
 
-    public String getColTwo() {
-        return colTwo;
+    public String getcoltwo() {
+        return coltwo;
     }
 
-    public void setColTwo(String colTwo) {
-        this.colTwo = colTwo;
+    public void setcoltwo(String coltwo) {
+        this.coltwo = coltwo;
     }
 
-    public String getColThree() {
-        return colThree;
+    public String getcolthree() {
+        return colthree;
     }
 
-    public void setColThree(String colThree) {
-        this.colThree = colThree;
+    public void setcolthree(String colthree) {
+        this.colthree = colthree;
+    }
+
+    public String getcolfour() {
+        return colfour;
+    }
+
+    public void setcolfour(String colfour) {
+        this.colfour = colfour;
+    }
+
+    public LocalDate getcoldate() {
+        return coldate;
+    }
+
+    public void setcoldate(LocalDate coldate) {
+        this.coldate = coldate;
     }
 }

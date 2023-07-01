@@ -39,7 +39,7 @@ public class ControllerOne {
     //CREATE NEW RECORD:
     //PROD: https://besterdev-be-f61a2efc23c9.herokuapp.com/api/v1/records/create
     //LOCAL: http://localhost:8000/api/v1/records/create
-    //INSOMNIA POST STRING = { "colOne": "colOne", "colTwo": "colTwo", "colThree": "colThree"}
+    //POST STRING: { "colone": "1", "coltwo": "2", "colthree": "3", "colfour": "4", "coldate": "2023-02-02"}
     @RequestMapping(value = "/records/create", method = RequestMethod.POST)
     EntityOne postRecord(@RequestBody EntityOne tableoneentity) {
         EntityOne newRecord = repoOne.save(tableoneentity);
