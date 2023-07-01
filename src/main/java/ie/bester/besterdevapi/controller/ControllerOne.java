@@ -23,7 +23,7 @@ public class ControllerOne {
     private RepoOne repoOne;
 
     //RETURN HELLO WORLD:
-    //PROD: https://besterdev-be-f61a2efc23c9.herokuapp.com/api/v1/hello
+    //PROD: https://besterdev-api-13a0246c9cf2.herokuapp.com/api/v1/hello
     @GetMapping("/hello")
     private String helloWorld() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd @ HH:mm");
@@ -32,14 +32,14 @@ public class ControllerOne {
 
 
     //RETURN ALL RECORDS:
-    //PROD: https://besterdev-be-f61a2efc23c9.herokuapp.com/api/v1/records
+    //PROD: https://besterdev-api-13a0246c9cf2.herokuapp.com/api/v1/records
     //LOCAL: http://localhost:8000/api/v1/records
     @GetMapping("/records")
     private List<EntityOne> getAllRecords() {return repoOne.findAll();}
 
 
     //CREATE NEW RECORD (POST):
-    //PROD: https://besterdev-be-f61a2efc23c9.herokuapp.com/api/v1/records/create
+    //PROD: https://besterdev-api-13a0246c9cf2.herokuapp.com/api/v1/records/create
     //LOCAL: http://localhost:8000/api/v1/records/create
     //POST STRING: { "colone": "1", "coltwo": "2", "colthree": "3", "colfour": "4", "coldate": "2023-02-02"}
     @RequestMapping(value = "/records/create", method = RequestMethod.POST)
@@ -49,7 +49,7 @@ public class ControllerOne {
 
 
     //UPDATE RECORD BY ID (PUT):
-    //PROD: https://besterdev-be-f61a2efc23c9.herokuapp.com/api/v1/records/update/{ID}
+    //PROD: https://besterdev-api-13a0246c9cf2.herokuapp.com/api/v1/records/update/{ID}
     //LOCAL: http://localhost:8000/api/v1/records/update/{ID}
     //PUT STRING: { "colone": "PUT", "coltwo": "PUT", "colthree": "PUT", "colfour": "PUT", "coldate": "2000-01-01"}
     @RequestMapping(value = "/records/update/{ID}", method = RequestMethod.PUT)
