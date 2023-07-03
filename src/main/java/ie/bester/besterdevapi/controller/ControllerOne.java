@@ -65,4 +65,17 @@ public class ControllerOne {
             EntityOne savedChange = repoOne.save(existingChange);
             return new ResponseEntity<EntityOne>(savedChange, HttpStatus.ACCEPTED);}
     }
-}
+
+
+
+    //DELETE RECORD BY ID:
+    //PROD: https://besterdev-api-13a0246c9cf2.herokuapp.com/api/v1/records/delete/{ID}
+    //LOCAL: http://localhost:8000/api/v1/records/delete/{ID}
+    @RequestMapping(value = "/records/delete/{ID}", method = RequestMethod.DELETE)
+    EntityOne deleteRecord(@PathVariable("ID") int ID) {
+        Optional<EntityOne> optionalRecord = repoOne.findById(ID);
+        EntityOne extractedRecord = optionalRecord.get();
+        repoOne.delete(extractedRecord);
+        return extractedRecord;}
+    }
+
