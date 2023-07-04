@@ -23,7 +23,8 @@ public class BesterdevApiApplication {
 			registry.addMapping("/**")
 					.allowedOrigins(
 							"http://localhost:3000",
-							"https://besterdev-ui-7acbd6898555.herokuapp.com/")
+							"https://besterdev-ui-7acbd6898555.herokuapp.com/",
+							"https://www.bester.ie")
 					.allowedMethods("*");
 		}
 	}

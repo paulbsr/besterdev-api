@@ -66,8 +66,6 @@ public class ControllerOne {
             return new ResponseEntity<EntityOne>(savedChange, HttpStatus.ACCEPTED);}
     }
 
-
-
     //DELETE RECORD BY ID:
     //PROD: https://besterdev-api-13a0246c9cf2.herokuapp.com/api/v1/records/delete/{ID}
     //LOCAL: http://localhost:8000/api/v1/records/delete/{ID}
