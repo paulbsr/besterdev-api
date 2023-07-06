@@ -24,7 +24,9 @@ public class BesterdevApiApplication {
 					.allowedOrigins(
 							"http://localhost:3000",
 							"https://besterdev-ui-7acbd6898555.herokuapp.com/",
-							"https://www.bester.ie")
+							"https://besterdev-fe-3cb7ee367d01.herokuapp.com/"
+							"https://www.bester.ie",
+							"http://www.bester.ie")
 					.allowedMethods("*");
 		}
 	}
